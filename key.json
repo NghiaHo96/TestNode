@@ -1,5 +1,0 @@
-{
-	"client_id": "764691019178-8htebpd1boipcoh3q8o6cc34tsnolo9c.apps.googleusercontent.com",
-	"client_secret": "wdnZ-RgOL5wnCjDSfBZKutj2",
-	"redirect_uris": "http://localhost:3001/users/auth/google/callback"
-}
