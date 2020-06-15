@@ -84,10 +84,6 @@ exports.postLogin = (req, res) => {
     })(req, res)
 }
 
-exports.postLoginGoogle = (req, res) => {
-	passport.authenticate('google', { scope: ["profile", "email"], prompt: 'consent', accessType: 'offline'})
-}
-
 exports.postLoginGooleCallback = (req, res) => {
 	passport.authenticate('google', { failureRedirect: '/users/login' }, (err, user, info) => {
 		if (err || !user) {

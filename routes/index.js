@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const passport = require('passport')
-const validate = require('../actions/validate.js')
 const articleController = require('../controllers/articleController.js')
 const userController = require('../controllers/userController.js')
 
@@ -25,7 +24,7 @@ router.get('/users/login', userController.getLogin)
 
 router.post('/users/login', userController.postLogin)
 
-router.get('/users/auth/google', userController.postLoginGoogle)
+router.get('/users/auth/google', passport.authenticate('google', { scope: ["profile", "email"], prompt: 'consent', accessType: 'offline'}))
 router.get('/users/auth/google/callback', userController.postLoginGooleCallback)
 
 router.post('/users/logout', userController.postLogout)
